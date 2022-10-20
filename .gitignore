@@ -1,0 +1,9 @@
+/.idea/
+
+*.css
+*.woff2
+*.html
+
+*.DS_Store
+
+/__pycache__/
