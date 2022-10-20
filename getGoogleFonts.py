@@ -63,7 +63,7 @@ for n in fontList:
             fontFile.write(r.content)
 
         # Add preload Syntax
-        headerPreload += '<link as="font" rel="preload" type="font/woff2" href="./'+webPath+fileName+'" />' + "\n";
+        headerPreload += '<link as="font" rel="preload" type="font/woff2" href="./'+webPath+fileName+'" crossorigin="anonymous" />' + "\n";
 
         # Add Font to CSS
         cssFileData += "/* "+m.getFileAdding()+" */" + "\n"
