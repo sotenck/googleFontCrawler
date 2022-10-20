@@ -11,7 +11,7 @@ print("Welcome to Google®-Font local install helper!")
 # Request URL Input
 print("\nPlease copy your Google® fonts include URL here:")
 
-googleBaseUrl = "fonts.googleapis.com/css?family="
+googleBaseUrl = "fonts.googleapis.com/css"
 
 fontUrl = str(input())
 
