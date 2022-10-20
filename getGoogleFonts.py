@@ -53,7 +53,7 @@ headerPreload = ""
 styleCount = 0;
 
 for n in fontList:
-    cssFileData += "/* "+n.name.upper()+" */" + "\n"
+    cssFileData += "/* "+n.name.upper()+" | "+n.charset+" */" + "\n"
     for m in n.variations:
         fileName = f"/{n.cleanFamilyName()}-{m.getFileAdding()}-{n.charset}.woff2"
 
@@ -63,10 +63,10 @@ for n in fontList:
             fontFile.write(r.content)
 
         # Add preload Syntax
-        headerPreload += '<link rel="preload" href="./'+webPath+fileName+'" />' + "\n";
+        headerPreload += '<link as="font" rel="preload" type="font/woff2" href="./'+webPath+fileName+'" />' + "\n";
 
         # Add Font to CSS
-        cssFileData += "/* "+m.getFileAdding()+" | "+n.charset+" */" + "\n"
+        cssFileData += "/* "+m.getFileAdding()+" */" + "\n"
         cssFileData += "@font-face{" + "\n"
         cssFileData += "    font-family: '"+n.name+"';" + "\n"
         cssFileData += "    font-style: "+m.styleName+";" + "\n"
@@ -78,7 +78,7 @@ for n in fontList:
         styleCount += 1
 
 # link Font CSS File
-headerPreload += '<link rel="stylesheet" href="./css/font.css"  />'
+headerPreload += '<link rel="preload stylesheet" as="style" href="./css/font.css"  />'
 
 # Write CSS File
 with open(base_path+'/font.css', 'wt') as cssFile:
