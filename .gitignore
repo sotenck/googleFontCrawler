@@ -3,6 +3,7 @@
 *.css
 *.woff2
 *.html
+*.log
 
 *.DS_Store
 
