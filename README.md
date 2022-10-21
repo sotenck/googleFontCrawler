@@ -1,7 +1,8 @@
 # Google Font hosted to local
 
-Automatic Web crawler for extracting and preparing google fonts for local use.
+Automatic Web crawler for extracting and preparing google fonts for local use. This is nessessary due to european data protection law. (DSGVO) Downloading and linking all font-files by hand is tidious. So I wrote a small python script to automate the process.
 
+When accessing google fonts over the "fonts.googleapis.com" url, the file is generated shortly after the request. Thus a webcrawler is needed to access the font-data at runtime.
 ## Requirments
 
 - Firefox browser
